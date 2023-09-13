@@ -1,8 +1,8 @@
 module.exports = {
   title: "aoi.js",
   tagline: "aoi.js documentation",
-  url: "https://aoijs.github.io",
-  baseUrl: "/website-old",
+  url: "https://aoijs.js.org",
+  baseUrl: "/",
   favicon: "img/logo.png",
   organizationName: "aoijs",
   projectName: "website",
