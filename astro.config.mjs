@@ -21,6 +21,7 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/aoijs/website/edit/main/",
       },
+      pagefind: false,
       customCss: ["./src/styles/custom.css"],
       components: {
         // Override the default `Search` component.
@@ -62,16 +63,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content:
-              "https://raw.githubusercontent.com/aoijs/website/master/assets/images/aoijs-banner.png",
+            content: "https://raw.githubusercontent.com/aoijs/website/master/assets/images/aoijs-banner.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content:
-              "https://raw.githubusercontent.com/aoijs/website/master/assets/images/aoijs-banner.png",
+            content: "https://raw.githubusercontent.com/aoijs/website/master/assets/images/aoijs-banner.png",
           },
         },
         {
@@ -295,9 +294,5 @@ export default defineConfig({
         },
       ],
     ],
-  },
-  redirects: {
-    // for easier navigation
-    guides: "/",
   },
 });
