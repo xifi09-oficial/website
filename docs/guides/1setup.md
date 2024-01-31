@@ -1,23 +1,46 @@
 ---
-title: Setup
-description: Ready to begin using aoi.js, this is the basic setup you'll need to begin using aoi.js.
-id: setup
+title: aoi.js Introduction
+description: The beginning process of how to use aoi.js and all its features.
+slug: /
 ---
+
+![aoijs](https://github.com/aoijs/website/blob/main/assets/images/aoijs-banner.png?raw=true)
+
+## Features
+
+- Built-in support of **[database](https://www.npmjs.com/package/@akarui/aoi.db)** by default and ready for multipurpose.
+- Built-in **600+** functions, simple and easy to learn.
+- Simple to learn, all in string-based and compact.
+- Support of extensions available to be used by the community.
 
 ## Installation
 
-**node.js 16.9.0 or newer is required.**
 
-```bash
-npm install aoi.js
-```
+<Tabs groupId="pref-install">
+  <TabItem value="i-npm" label="npm">
 
-## Example
+  **node.js 16.9.0 or newer is required.**
+  ```bash
+  npm install aoi.js
+  ```
 
-```javascript
+  </TabItem>
+  <TabItem value="i-yarn" label="yarn">
+
+  **node.js 16.9.0 or newer is required.**
+  ```bash
+  yarn add aoi.js
+  ```
+  
+  </TabItem>
+</Tabs>
+
+## Setup
+
+```javascript title="index.js"
 const { AoiClient } = require("aoi.js");
 
-const bot = new AoiClient({
+const client = new AoiClient({
     token: "Discord Bot Token",
     prefix: "Discord Bot Prefix",
     intents: ["MessageContent", "Guilds", "GuildMessages"],
@@ -25,28 +48,26 @@ const bot = new AoiClient({
     database: {
         type: "aoi.db",
         db: require("@akarui/aoi.db"),
+        dbType: "KeyValue",
         tables: ["main"],
-        path: "./database/",
-        extraOptions: {
-            dbType: "KeyValue"
-        }
+        securityKey: "a-32-characters-long-string-here",
     }
 });
 
-// Ping Command Example
+// Ping Command
 bot.command({
     name: "ping",
     code: `Pong! $pingms`
 });
-
-/* Slash Interaction Command Example (ping)
-You must execute the function below for the slash command to work:
-$createApplicationCommand[$guildID;ping;Pong!;true;slash]
-*/
-
-bot.interactionCommand({
-    name: "ping",
-    prototype: "slash",
-    code: `$interactionReply[Pong! $pingms;;;;everyone;false]`
-});
 ```
+
+## Disclaimer
+
+**[Aoi.js](https://www.npmjs.com/package/aoi.js)** is not affiliated or associated with Discord or any other services.
+
+## Links
+
+- [Website](https://aoi.js.org)
+- [NPM](https://www.npmjs.com/package/aoi.js)
+- [Github](https://github.com/AkaruiDevelopment/aoi.js)
+- [Discord Support Server](https://aoi.js.org/invite)
