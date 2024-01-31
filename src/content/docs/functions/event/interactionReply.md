@@ -29,6 +29,7 @@ $interactionReply[content?;embeds?;components?;files?;allowedMentions?;ephemeral
 client.interactionCommand({
   name: "interactionReply",
   prototype: "slash", // button/selectMenu/slash
+  type: "interaction",
   code: `
   $interactionReply[Hello, world!;;;;everyone;false]
   `
